@@ -1,0 +1,1456 @@
+/* ==========================================================================
+   Международный университет Фурузона - Modern Vibrant Academic Theme
+   Rounded Corners, Vivid Colors & Premium Academic Styling
+   ========================================================================== */
+
+:root {
+  /* Vibrant University Colors */
+  --uni-blue: #0066cc;
+  --uni-blue-electric: #1d72fe;
+  --uni-blue-dark: #0a2540;
+  --uni-blue-soft: #edf5ff;
+  --uni-cyan: #00b4d8;
+  --uni-gold: #ffb703;
+  --uni-gold-hover: #fb8500;
+  --uni-emerald: #10b981;
+  --uni-purple: #8b5cf6;
+  
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  --border-light: #e2e8f0;
+  
+  --bg-page: #f4f7fb;
+  --bg-white: #ffffff;
+  
+  /* Soft Rounded Radii */
+  --radius-pill: 9999px;
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+  
+  /* Rich Modern Shadows */
+  --shadow-sm: 0 4px 10px rgba(10, 37, 64, 0.05);
+  --shadow-md: 0 10px 25px rgba(10, 37, 64, 0.08);
+  --shadow-hover: 0 18px 38px rgba(0, 102, 204, 0.18);
+  --shadow-glow: 0 8px 24px rgba(29, 114, 254, 0.35);
+  
+  --transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-page);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   1. Clean White Academic Header with Vibrant Accents
+   ========================================================================== */
+
+/* Top Utility Bar */
+.header-utility-bar {
+  background: linear-gradient(90deg, #f8fafc 0%, #edf5ff 100%);
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.82rem;
+}
+
+.header-utility-bar .container {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 8px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.audience-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.audience-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.audience-links a:hover,
+.audience-links a.active {
+  color: var(--uni-blue);
+  background-color: #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+
+.utility-right-tools {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.hotline-phone {
+  color: var(--uni-blue);
+  text-decoration: none;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #ffffff;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.hotline-phone:hover {
+  transform: translateY(-1px);
+  color: var(--uni-blue-electric);
+}
+
+.lang-selector {
+  display: flex;
+  gap: 4px;
+  background-color: #ffffff;
+  padding: 3px;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.lang-btn.active {
+  background: linear-gradient(135deg, var(--uni-blue) 0%, var(--uni-blue-electric) 100%);
+  color: #ffffff;
+}
+
+.personal-portal-link {
+  color: var(--uni-blue-dark);
+  text-decoration: none;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #ffffff;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.personal-portal-link:hover {
+  color: var(--uni-blue);
+  transform: translateY(-1px);
+}
+
+/* Main White Navigation Header */
+.main-white-header {
+  background-color: #ffffff;
+  border-bottom: 2px solid #e0eeff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 102, 204, 0.06);
+}
+
+.main-white-header .container {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+}
+
+.brand-emblem {
+  width: 54px;
+  height: 54px;
+  background: linear-gradient(135deg, #1d72fe 0%, #0052cc 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1.7rem;
+  box-shadow: 0 6px 18px rgba(29, 114, 254, 0.35);
+  border: 2px solid var(--uni-gold);
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.brand-wrapper:hover .brand-emblem {
+  transform: rotate(5deg) scale(1.04);
+}
+
+.brand-names h1 {
+  font-size: 1.15rem;
+  font-weight: 900;
+  line-height: 1.15;
+  color: var(--uni-blue-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.brand-names span {
+  font-size: 0.72rem;
+  color: var(--uni-blue);
+  letter-spacing: 0.8px;
+  display: block;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.nav-links-menu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  list-style: none;
+}
+
+.nav-links-menu a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  position: relative;
+  transition: var(--transition);
+}
+
+.nav-links-menu a:hover,
+.nav-links-menu a.active {
+  color: var(--uni-blue);
+  background-color: var(--uni-blue-soft);
+}
+
+.btn-header-apply {
+  background: linear-gradient(135deg, #ffb703 0%, #fb8500 100%);
+  color: #0a2540;
+  font-weight: 800;
+  font-size: 0.88rem;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 6px 16px rgba(251, 133, 0, 0.35);
+  transition: var(--transition);
+}
+
+.btn-header-apply:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(251, 133, 0, 0.5);
+}
+
+.mobile-menu-icon {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--uni-blue-dark);
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   2. Full-Width Photographic Campus Hero Banner
+   ========================================================================== */
+.hero-slider-section {
+  position: relative;
+  min-height: 540px;
+  background: 
+    linear-gradient(90deg, rgba(10, 37, 64, 0.94) 0%, rgba(0, 82, 163, 0.84) 50%, rgba(29, 114, 254, 0.55) 100%),
+    url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  padding: 70px 24px 110px;
+}
+
+.hero-slider-section .container {
+  max-width: 1380px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-text-block {
+  max-width: 800px;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--uni-gold) 0%, var(--uni-gold-hover) 100%);
+  color: #0a2540;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 14px rgba(255, 183, 3, 0.4);
+}
+
+.hero-title-main {
+  font-size: 3.3rem;
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 22px;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
+}
+
+.hero-title-main span {
+  color: #ffe066;
+}
+
+.hero-sub-p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #e2eaf2;
+  margin-bottom: 34px;
+}
+
+.hero-cta-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-hero-solid {
+  background: linear-gradient(135deg, #ffb703 0%, #fb8500 100%);
+  color: #0a2540;
+  font-weight: 800;
+  font-size: 0.98rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 15px 32px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 24px rgba(251, 133, 0, 0.45);
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-hero-solid:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(251, 133, 0, 0.6);
+}
+
+.btn-hero-outline {
+  background-color: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  font-weight: 700;
+  font-size: 0.98rem;
+  padding: 14px 30px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.btn-hero-outline:hover {
+  background-color: #ffffff;
+  color: var(--uni-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.25);
+}
+
+/* ==========================================================================
+   3. Floating Rounded Quick-Access Academic Tiles
+   ========================================================================== */
+.quick-tiles-wrapper {
+  max-width: 1380px;
+  margin: -65px auto 40px;
+  padding: 0 24px;
+  position: relative;
+  z-index: 10;
+}
+
+.quick-tiles-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.quick-tile-card {
+  background-color: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 28px 22px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-light);
+  text-decoration: none;
+  color: var(--text-main);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.quick-tile-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--uni-blue) 0%, var(--uni-cyan) 100%);
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+}
+
+.quick-tile-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  border-color: #bfdbfe;
+}
+
+.quick-tile-card:hover::before {
+  background: linear-gradient(90deg, #ffb703 0%, #fb8500 100%);
+}
+
+.tile-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--uni-blue-soft) 0%, #dbeafe 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  transition: var(--transition);
+}
+
+.quick-tile-card:hover .tile-icon {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+}
+
+.quick-tile-card h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--uni-blue-dark);
+  margin-bottom: 8px;
+}
+
+.quick-tile-card p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.tile-arrow {
+  margin-top: 16px;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--uni-blue-electric);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+}
+
+.quick-tile-card:hover .tile-arrow {
+  transform: translateX(4px);
+  color: var(--uni-gold-hover);
+}
+
+/* ==========================================================================
+   4. Vibrant Institutional Statistics Band
+   ========================================================================== */
+.stats-band {
+  background: linear-gradient(135deg, #0a2540 0%, #004b87 100%);
+  color: #ffffff;
+  padding: 55px 24px;
+  margin-bottom: 50px;
+  border-radius: var(--radius-lg);
+  max-width: 1380px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: var(--shadow-md);
+}
+
+.stats-band .container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.stat-item h4 {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #ffd166;
+  line-height: 1;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.stat-item p {
+  font-size: 0.95rem;
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   5. Educational Programs Catalog Section (ROUNDED TABS & CARDS)
+   ========================================================================== */
+.section-container {
+  max-width: 1380px;
+  margin: 0 auto 80px;
+  padding: 0 24px;
+}
+
+.section-title-wrap {
+  margin-bottom: 35px;
+}
+
+.section-kicker {
+  color: var(--uni-blue-electric);
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.section-heading {
+  font-size: 2.3rem;
+  font-weight: 900;
+  color: var(--uni-blue-dark);
+}
+
+/* Catalog Panel */
+.catalog-panel {
+  background-color: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 34px;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+}
+
+/* ROUNDED PILL TABS (Вкладки с закругленными углами) */
+.levels-tab-row {
+  display: flex;
+  gap: 10px;
+  background-color: #f1f5f9;
+  padding: 6px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 28px;
+  overflow-x: auto;
+}
+
+.level-pill-btn {
+  background: none;
+  border: none;
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: var(--radius-pill);
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.level-pill-btn:hover {
+  color: var(--uni-blue);
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.level-pill-btn.active {
+  background: linear-gradient(135deg, var(--uni-blue) 0%, var(--uni-blue-electric) 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(29, 114, 254, 0.35);
+}
+
+/* Controls Filter Grid */
+.controls-filter-grid {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr 1fr;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.search-field-box {
+  position: relative;
+}
+
+.search-field-box input {
+  width: 100%;
+  padding: 14px 16px 14px 44px;
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  outline: none;
+  background-color: #f8fafc;
+  transition: var(--transition);
+}
+
+.search-field-box input:focus {
+  border-color: var(--uni-blue-electric);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(29, 114, 254, 0.15);
+}
+
+.search-icon-pos {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.dropdown-filter-select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  background-color: #f8fafc;
+  outline: none;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.dropdown-filter-select:focus {
+  border-color: var(--uni-blue-electric);
+  background-color: #ffffff;
+}
+
+.programs-counter-bar {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  border-bottom: 1px solid #edf2f7;
+  padding-bottom: 12px;
+}
+
+.programs-counter-bar strong {
+  color: var(--uni-blue-dark);
+}
+
+/* Programs Card Grid with Rounded Corners */
+.programs-cards-flow {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 26px;
+}
+
+.card-program-item {
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-program-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--uni-blue-electric) 0%, var(--uni-cyan) 100%);
+}
+
+.card-program-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  border-color: #bfdbfe;
+}
+
+.badges-stack {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.tag-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+}
+
+.tag-badge.degree {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  color: #1d4ed8;
+}
+
+.tag-badge.code {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+.tag-badge.budget {
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  color: #065f46;
+}
+
+.prog-item-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--uni-blue-dark);
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+.prog-faculty-affiliation {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+.prog-parameters-table {
+  border-top: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
+  padding: 14px 0;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  font-size: 0.85rem;
+}
+
+.param-col span {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.param-col strong {
+  color: var(--text-main);
+  font-size: 0.9rem;
+}
+
+.card-cta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-text {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: var(--uni-blue-dark);
+}
+
+.price-text span {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  display: block;
+}
+
+.btn-card-enroll {
+  background: linear-gradient(135deg, var(--uni-blue) 0%, var(--uni-blue-electric) 100%);
+  color: #ffffff;
+  border: none;
+  padding: 11px 22px;
+  border-radius: var(--radius-pill);
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(29, 114, 254, 0.3);
+  transition: var(--transition);
+}
+
+.btn-card-enroll:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(29, 114, 254, 0.45);
+}
+
+/* ==========================================================================
+   6. Academic Institutes Grid (Rounded & Colorful)
+   ========================================================================== */
+.institutes-academic-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.institute-card-unit {
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.institute-card-unit:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: #93c5fd;
+}
+
+.unit-top-info {
+  margin-bottom: 22px;
+}
+
+.unit-emblem-badge {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 16px;
+  transition: var(--transition);
+}
+
+.institute-card-unit:hover .unit-emblem-badge {
+  transform: scale(1.1) rotate(5deg);
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+}
+
+.institute-card-unit h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--uni-blue-dark);
+  margin-bottom: 10px;
+}
+
+.institute-card-unit p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.unit-programs-link {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--uni-blue-electric);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+}
+
+.unit-programs-link:hover {
+  color: var(--uni-gold-hover);
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   7. News & Campus Events Grid (Rounded Cards)
+   ========================================================================== */
+.news-events-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.news-portal-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.news-portal-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.news-photo-thumb {
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease;
+}
+
+.news-portal-card:hover .news-photo-thumb {
+  transform: scale(1.04);
+}
+
+.news-photo-thumb.img-1 {
+  background: linear-gradient(rgba(10, 37, 64, 0.35), rgba(10, 37, 64, 0.65)),
+    url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80') center/cover;
+}
+
+.news-photo-thumb.img-2 {
+  background: linear-gradient(rgba(10, 37, 64, 0.35), rgba(10, 37, 64, 0.65)),
+    url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80') center/cover;
+}
+
+.news-photo-thumb.img-3 {
+  background: linear-gradient(rgba(10, 37, 64, 0.35), rgba(10, 37, 64, 0.65)),
+    url('https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80') center/cover;
+}
+
+.news-card-inner {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.news-stamp-date {
+  font-size: 0.78rem;
+  color: var(--uni-gold-hover);
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.news-portal-card h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--uni-blue-dark);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.news-portal-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.read-more-link {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--uni-blue-electric);
+  text-decoration: none;
+}
+
+.read-more-link:hover {
+  color: var(--uni-gold-hover);
+}
+
+/* ==========================================================================
+   8. Application Modal (Rounded Dialog & Controls)
+   ========================================================================== */
+.modal-overlay-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 37, 64, 0.75);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.modal-overlay-wrap.active {
+  display: flex;
+}
+
+.modal-box-frame {
+  background-color: #ffffff;
+  border-radius: var(--radius-lg);
+  max-width: 600px;
+  width: 100%;
+  padding: 38px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+.modal-close-trigger {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #f1f5f9;
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-pill);
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.modal-close-trigger:hover {
+  background-color: #e2e8f0;
+  color: var(--uni-blue-dark);
+}
+
+.modal-header-text h2 {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--uni-blue-dark);
+}
+
+.modal-header-text p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin: 6px 0 24px;
+}
+
+.form-group-item {
+  margin-bottom: 18px;
+}
+
+.form-group-item label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.form-input-control {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  outline: none;
+  background-color: #f8fafc;
+  transition: var(--transition);
+}
+
+.form-input-control:focus {
+  border-color: var(--uni-blue-electric);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(29, 114, 254, 0.15);
+}
+
+.form-two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.checkbox-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 22px;
+}
+
+.btn-send-application {
+  width: 100%;
+  background: linear-gradient(135deg, var(--uni-blue) 0%, var(--uni-blue-electric) 100%);
+  color: #ffffff;
+  padding: 15px;
+  border: none;
+  border-radius: var(--radius-pill);
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 20px rgba(29, 114, 254, 0.35);
+  transition: var(--transition);
+}
+
+.btn-send-application:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(29, 114, 254, 0.5);
+}
+
+.success-container {
+  display: none;
+  text-align: center;
+  padding: 34px 10px;
+}
+
+.success-container.active {
+  display: block;
+}
+
+.success-icon-check {
+  font-size: 3.8rem;
+  margin-bottom: 14px;
+}
+
+/* ==========================================================================
+   8.1 Login Modal (Личный кабинет) Specifics
+   ========================================================================== */
+.login-modal-frame {
+  max-width: 480px;
+}
+
+.login-header-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--uni-blue-soft) 0%, #dbeafe 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin: 0 auto 14px;
+}
+
+.login-role-switch {
+  display: flex;
+  background-color: #f1f5f9;
+  border-radius: var(--radius-pill);
+  padding: 4px;
+  margin-bottom: 22px;
+}
+
+.role-switch-btn {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.role-switch-btn.active {
+  background-color: #ffffff;
+  color: var(--uni-blue);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-with-icon .field-icon {
+  position: absolute;
+  left: 14px;
+  font-size: 1rem;
+  color: var(--text-light);
+  pointer-events: none;
+}
+
+.input-with-icon input {
+  padding-left: 42px;
+  padding-right: 44px;
+}
+
+.toggle-password-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  padding: 4px;
+}
+
+.login-aux-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  margin-bottom: 20px;
+}
+
+.checkbox-remember {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.forgot-pass-link {
+  color: var(--uni-blue-electric);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.forgot-pass-link:hover {
+  text-decoration: underline;
+}
+
+.login-demo-hint {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background-color: #f8fafc;
+  padding: 10px;
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--border-light);
+}
+
+.login-demo-hint code {
+  background-color: #e2e8f0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--uni-blue-dark);
+  font-weight: 700;
+}
+
+/* Dashboard preview in modal */
+.user-avatar-badge {
+  font-size: 3.2rem;
+  margin-bottom: 10px;
+}
+
+.cabinet-mini-summary {
+  background-color: #f8fafc;
+  border-radius: var(--radius-md);
+  padding: 16px;
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.mini-summary-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #edf2f7;
+  padding-bottom: 6px;
+}
+
+.mini-summary-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.mini-summary-item .lbl {
+  color: var(--text-muted);
+}
+
+.mini-summary-item .val {
+  font-weight: 700;
+  color: var(--uni-blue-dark);
+}
+
+.mini-summary-item .badge-active {
+  color: #065f46;
+  background-color: #d1fae5;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+}
+
+/* ==========================================================================
+   9. Institutional Footer
+   ========================================================================== */
+.flagship-footer {
+  background: linear-gradient(180deg, #0a2540 0%, #061729 100%);
+  color: #cbd5e1;
+  padding: 70px 24px 28px;
+  border-top: 4px solid var(--uni-gold);
+}
+
+.flagship-footer .container {
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+.footer-columns-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+  gap: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-columns-grid h4 {
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-nav-list a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.footer-nav-list a:hover {
+  color: var(--uni-gold);
+  transform: translateX(3px);
+}
+
+.footer-contacts-info {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 0.9rem;
+}
+
+.footer-contacts-info li {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-bottom-legal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 26px;
+  font-size: 0.82rem;
+  color: #94a3b8;
+}
+
+/* ==========================================================================
+   10. Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .quick-tiles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .institutes-academic-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .news-events-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .header-utility-bar {
+    display: none;
+  }
+  
+  .nav-links-menu {
+    display: none;
+  }
+  
+  .nav-links-menu.mobile-open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  }
+  
+  .mobile-menu-icon {
+    display: block;
+  }
+  
+  .hero-title-main {
+    font-size: 2.3rem;
+  }
+  
+  .stats-band .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .controls-filter-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .programs-cards-flow {
+    grid-template-columns: 1fr;
+  }
+  
+  .institutes-academic-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-columns-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-bottom-legal {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}

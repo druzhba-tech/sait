@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Личный кабинет студента | Международный университет Фурузона</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Cabinet Specific Styles */
+    .cabinet-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 30px;
+      max-width: 1380px;
+      margin: 30px auto 60px;
+      padding: 0 24px;
+    }
+
+    .cabinet-sidebar {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      height: fit-content;
+      position: sticky;
+      top: 90px;
+    }
+
+    .student-profile-summary {
+      text-align: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #edf2f7;
+      margin-bottom: 20px;
+    }
+
+    .student-avatar-frame {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--uni-blue-electric) 0%, var(--uni-blue) 100%);
+      color: #ffffff;
+      font-size: 2.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+      border: 3px solid #ffffff;
+      box-shadow: 0 4px 14px rgba(0, 102, 204, 0.25);
+    }
+
+    .student-name-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--uni-blue-dark);
+      line-height: 1.3;
+    }
+
+    .student-meta-badge {
+      display: inline-block;
+      margin-top: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #065f46;
+      background: #d1fae5;
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+    }
+
+    .cabinet-nav-menu {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .cabinet-nav-btn {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      padding: 12px 16px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: var(--transition);
+    }
+
+    .cabinet-nav-btn:hover {
+      color: var(--uni-blue);
+      background-color: var(--uni-blue-soft);
+    }
+
+    .cabinet-nav-btn.active {
+      background: linear-gradient(135deg, var(--uni-blue) 0%, var(--uni-blue-electric) 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(29, 114, 254, 0.3);
+    }
+
+    .cabinet-main-view {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 34px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .view-tab-content {
+      display: none;
+    }
+
+    .view-tab-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    .view-headline {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--uni-blue-dark);
+      margin-bottom: 6px;
+    }
+
+    .view-subheadline {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 26px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #edf2f7;
+    }
+
+    /* Student Digital Card */
+    .digital-student-card {
+      background: linear-gradient(135deg, #0a2540 0%, #004b87 60%, #1d72fe 100%);
+      color: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 12px 30px rgba(0, 75, 135, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .digital-student-card::after {
+      content: '🎓';
+      position: absolute;
+      right: 20px;
+      bottom: -10px;
+      font-size: 9rem;
+      opacity: 0.08;
+      pointer-events: none;
+    }
+
+    .card-top-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 14px;
+    }
+
+    .card-uni-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card-chip {
+      font-size: 0.8rem;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+    }
+
+    .card-student-body {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .card-photo-box {
+      width: 100px;
+      height: 120px;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.15);
+      border: 2px dashed rgba(255, 255, 255, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+    }
+
+    .card-info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      font-size: 0.88rem;
+    }
+
+    .card-info-grid .field-lbl {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      display: block;
+    }
+
+    .card-info-grid .field-val {
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+
+    .card-qr-box {
+      text-align: center;
+      background: #ffffff;
+      padding: 10px;
+      border-radius: var(--radius-md);
+      color: #0a2540;
+    }
+
+    .qr-code-img {
+      width: 80px;
+      height: 80px;
+      background: 
+        repeating-linear-gradient(0deg, #000 0px, #000 4px, transparent 4px, transparent 8px),
+        repeating-linear-gradient(90deg, #000 0px, #000 4px, #fff 4px, #fff 8px);
+      margin: 0 auto 6px;
+      border-radius: 4px;
+    }
+
+    /* Tuition & Payment Panel */
+    .balance-banner {
+      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+      border: 1px solid #bbf7d0;
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .balance-num-box h4 {
+      font-size: 0.85rem;
+      color: #166534;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .balance-num-box .amount {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: #14532d;
+    }
+
+    .quick-amount-pills {
+      display: flex;
+      gap: 10px;
+      margin: 12px 0 20px;
+      flex-wrap: wrap;
+    }
+
+    .amount-pill-btn {
+      background: #f1f5f9;
+      border: 1.5px solid var(--border-light);
+      padding: 8px 16px;
+      border-radius: var(--radius-pill);
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      color: var(--text-main);
+      transition: var(--transition);
+    }
+
+    .amount-pill-btn:hover,
+    .amount-pill-btn.active {
+      background: var(--uni-blue);
+      color: #ffffff;
+      border-color: var(--uni-blue);
+    }
+
+    .payment-methods-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .payment-method-card {
+      border: 1.5px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .payment-method-card:hover,
+    .payment-method-card.active {
+      border-color: var(--uni-blue-electric);
+      background: var(--uni-blue-soft);
+      box-shadow: 0 4px 12px rgba(29, 114, 254, 0.15);
+    }
+
+    .payment-method-card .icon {
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+    }
+
+    .payment-method-card h5 {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--uni-blue-dark);
+    }
+
+    /* Transactions Table */
+    .transactions-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 0.9rem;
+    }
+
+    .transactions-table th {
+      background-color: #f8fafc;
+      padding: 12px 16px;
+      text-align: left;
+      font-weight: 700;
+      color: var(--text-muted);
+      border-bottom: 1.5px solid var(--border-light);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+
+    .transactions-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #edf2f7;
+    }
+
+    .status-badge-paid {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+      font-size: 0.75rem;
+      font-weight: 800;
+      background: #d1fae5;
+      color: #065f46;
+    }
+
+    @media (max-width: 960px) {
+      .cabinet-layout {
+        grid-template-columns: 1fr;
+      }
+      .card-student-body {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .card-info-grid {
+        grid-template-columns: 1fr;
+      }
+      .payment-methods-grid {
+        grid-template-columns: 1fr;
+      }
+      .balance-banner {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= TOP BAR ================= -->
+  <header class="main-white-header">
+    <div class="container">
+      <a href="index.html" class="brand-wrapper">
+        <div class="brand-emblem">🎓</div>
+        <div class="brand-names">
+          <h1>Международный университет Фурузона</h1>
+          <span>Студенческий портал и панель обучения</span>
+        </div>
+      </a>
+
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <span style="font-size: 0.9rem; font-weight: 700; color: var(--uni-blue-dark);">
+          👤 Шодикулов А. Х.
+        </span>
+        <a href="index.html" class="btn-card-enroll" style="text-decoration: none; padding: 8px 18px; font-size: 0.82rem;">
+          Выйти на главную
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= CABINET MAIN LAYOUT ================= -->
+  <main class="cabinet-layout">
+    <!-- Sidebar Navigation -->
+    <aside class="cabinet-sidebar">
+      <div class="student-profile-summary">
+        <div class="student-avatar-frame">👨‍🎓</div>
+        <div class="student-name-title">Шодикулов Арджманд Хусейнович</div>
+        <div class="student-meta-badge">Студент 3 курса</div>
+      </div>
+
+      <ul class="cabinet-nav-menu">
+        <li>
+          <button class="cabinet-nav-btn active" data-tab="profileTab">
+            <span>🪪</span> Студенческий билет
+          </button>
+        </li>
+        <li>
+          <button class="cabinet-nav-btn" data-tab="paymentTab">
+            <span>💳</span> Оплата обучения и баланс
+          </button>
+        </li>
+        <li>
+          <button class="cabinet-nav-btn" data-tab="gradesTab">
+            <span>📊</span> Зачетная книжка
+          </button>
+        </li>
+        <li>
+          <button class="cabinet-nav-btn" data-tab="scheduleTab">
+            <span>📅</span> Расписание занятий
+          </button>
+        </li>
+        <li>
+          <a href="index.html" class="cabinet-nav-btn" style="text-decoration: none; margin-top: 16px; color: #ef4444;">
+            <span>🚪</span> Выйти из системы
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Main Views Area -->
+    <section class="cabinet-main-view">
+
+      <!-- ================= TAB 1: PROFILE & DIGITAL ID ================= -->
+      <div class="view-tab-content active" id="profileTab">
+        <h2 class="view-headline">Электронный студенческий билет</h2>
+        <p class="view-subheadline">Официальный цифровой профиль обучающегося в Международном университете Фурузона</p>
+
+        <div class="digital-student-card">
+          <div class="card-top-head">
+            <div class="card-uni-title">Международный университет Фурузона • Студенческий билет</div>
+            <div class="card-chip">№ 1032183391 • АКТИВЕН</div>
+          </div>
+
+          <div class="card-student-body">
+            <div class="card-photo-box">
+              <span>👨‍🎓</span>
+              <span style="font-size: 0.65rem; color: #cbd5e1; margin-top: 4px;">ФОТО</span>
+            </div>
+
+            <div class="card-info-grid">
+              <div>
+                <span class="field-lbl">ФИО обучающегося:</span>
+                <span class="field-val">Шодикулов Арджманд Хусейнович</span>
+              </div>
+              <div>
+                <span class="field-lbl">Институт / Факультет:</span>
+                <span class="field-val">Институт мировой экономики и бизнеса</span>
+              </div>
+              <div>
+                <span class="field-lbl">Направление подготовки:</span>
+                <span class="field-val">38.03.01 Экономика</span>
+              </div>
+              <div>
+                <span class="field-lbl">Форма и курс:</span>
+                <span class="field-val">Очная форма, 3 курс (Группа ЭК-301)</span>
+              </div>
+              <div>
+                <span class="field-lbl">Дата зачисления:</span>
+                <span class="field-val">01 сентября 2024 г.</span>
+              </div>
+              <div>
+                <span class="field-lbl">Действителен до:</span>
+                <span class="field-val">30 июня 2028 г.</span>
+              </div>
+            </div>
+
+            <div class="card-qr-box">
+              <div class="qr-code-img"></div>
+              <span style="font-size: 0.68rem; font-weight: 800;">ПРОВЕРКА СТАТУСА</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: #f8fafc; border-radius: var(--radius-md); padding: 20px; border: 1px solid var(--border-light);">
+          <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--uni-blue-dark); margin-bottom: 8px;">
+            ℹ️ Сведения о договоре на обучение
+          </h4>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+            Номер образовательного договора: <strong>ДОГ-1032183391/24</strong> от 25.08.2024.<br>
+            Приказ о зачислении: № 412-СТ от 28.08.2024. Деканат: главный учебный корпус, каб. 304.
+          </p>
+        </div>
+      </div>
+
+      <!-- ================= TAB 2: TUITION & BALANCE PAYMENT ================= -->
+      <div class="view-tab-content" id="paymentTab">
+        <h2 class="view-headline">Оплата обучения и баланс договора</h2>
+        <p class="view-subheadline">Онлайн-пополнение баланса, контроль оплаты семестров и квитанции</p>
+
+        <!-- Current Balance Banner -->
+        <div class="balance-banner">
+          <div class="balance-num-box">
+            <h4>Текущий баланс счета договора:</h4>
+            <div class="amount" id="displayBalanceAmount">25 000 ₽</div>
+            <span style="font-size: 0.82rem; color: #15803d; font-weight: 700;">
+              ✓ Осенний семестр 2026/2027 оплачен в полном объеме
+            </span>
+          </div>
+          <div>
+            <span class="status-badge-paid">Задолженностей нет</span>
+          </div>
+        </div>
+
+        <!-- Payment Form -->
+        <div style="background: #ffffff; border: 1.5px solid var(--border-light); border-radius: var(--radius-lg); padding: 26px; margin-bottom: 30px;">
+          <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--uni-blue-dark); margin-bottom: 12px;">
+            Онлайн-пополнение баланса договора
+          </h3>
+
+          <label style="font-size: 0.88rem; font-weight: 700; color: var(--text-main); display: block; margin-bottom: 6px;">
+            Выберите или введите сумму пополнения (₽):
+          </label>
+
+          <div class="quick-amount-pills">
+            <button type="button" class="amount-pill-btn active" data-val="15000">15 000 ₽</button>
+            <button type="button" class="amount-pill-btn" data-val="30000">30 000 ₽</button>
+            <button type="button" class="amount-pill-btn" data-val="50000">50 000 ₽</button>
+            <button type="button" class="amount-pill-btn" data-val="100000">100 000 ₽</button>
+          </div>
+
+          <div class="form-group-item" style="max-width: 320px;">
+            <input type="number" id="customPaymentAmount" class="form-input-control" value="15000" min="1000" step="1000">
+          </div>
+
+          <label style="font-size: 0.88rem; font-weight: 700; color: var(--text-main); display: block; margin-bottom: 10px;">
+            Способ онлайн-оплаты:
+          </label>
+
+          <div class="payment-methods-grid">
+            <div class="payment-method-card active" data-method="card">
+              <div class="icon">💳</div>
+              <h5>Банковская карта</h5>
+              <span style="font-size: 0.75rem; color: var(--text-muted);">МИР, Visa, Mastercard</span>
+            </div>
+            <div class="payment-method-card" data-method="sbp">
+              <div class="icon">⚡</div>
+              <h5>Система быстрых платежей</h5>
+              <span style="font-size: 0.75rem; color: var(--text-muted);">Без комиссии 0%</span>
+            </div>
+            <div class="payment-method-card" data-method="sber">
+              <div class="icon">🏦</div>
+              <h5>SberPay / Т-Pay</h5>
+              <span style="font-size: 0.75rem; color: var(--text-muted);">Быстрая оплата в 1 клик</span>
+            </div>
+          </div>
+
+          <button type="button" class="btn-send-application" id="btnExecuteTopUp">
+            Оплатить через платежный шлюз банка
+          </button>
+        </div>
+
+        <!-- Transactions History -->
+        <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--uni-blue-dark); margin-bottom: 10px;">
+          История операций и квитанции
+        </h3>
+        <table class="transactions-table">
+          <thead>
+            <tr>
+              <th>Дата</th>
+              <th>Номер операции</th>
+              <th>Назначение</th>
+              <th>Сумма</th>
+              <th>Статус</th>
+            </tr>
+          </thead>
+          <tbody id="transactionsHistoryBody">
+            <tr>
+              <td>15.09.2026</td>
+              <td>#PAY-2026-9812</td>
+              <td>Оплата за 5 семестр (Осенний 2026)</td>
+              <td><strong>160 000 ₽</strong></td>
+              <td><span class="status-badge-paid">Зачислено</span></td>
+            </tr>
+            <tr>
+              <td>10.02.2026</td>
+              <td>#PAY-2026-4421</td>
+              <td>Оплата за 4 семестр (Весенний 2026)</td>
+              <td><strong>160 000 ₽</strong></td>
+              <td><span class="status-badge-paid">Зачислено</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ================= TAB 3: GRADES & RECORD BOOK ================= -->
+      <div class="view-tab-content" id="gradesTab">
+        <h2 class="view-headline">Электронная зачетная книжка</h2>
+        <p class="view-subheadline">Результаты промежуточной аттестации и экзаменационных сессий</p>
+
+        <table class="transactions-table">
+          <thead>
+            <tr>
+              <th>Дисциплина</th>
+              <th>Семестр</th>
+              <th>Преподаватель</th>
+              <th>Форма контроля</th>
+              <th>Оценка</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Мировая экономика и международные отношения</strong></td>
+              <td>4 семестр</td>
+              <td>проф. Воронов С. М.</td>
+              <td>Экзамен</td>
+              <td><strong style="color: #059669;">Отлично (92 балла)</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Макроэкономическое прогнозирование</strong></td>
+              <td>4 семестр</td>
+              <td>доц. Николаев Д. А.</td>
+              <td>Экзамен</td>
+              <td><strong style="color: #059669;">Отлично (95 баллов)</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Международные валютно-кредитные отношения</strong></td>
+              <td>4 семестр</td>
+              <td>доц. Соколова Е. В.</td>
+              <td>Зачет с оценкой</td>
+              <td><strong style="color: #059669;">Хорошо (84 балла)</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Цифровые технологии в финансовом секторе</strong></td>
+              <td>4 семестр</td>
+              <td>ст. преп. Исмаилов Р. К.</td>
+              <td>Зачет</td>
+              <td><span class="status-badge-paid">Зачтено</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ================= TAB 4: SCHEDULE ================= -->
+      <div class="view-tab-content" id="scheduleTab">
+        <h2 class="view-headline">Расписание занятий</h2>
+        <p class="view-subheadline">Группа ЭК-301 • Текущая учебная неделя (Числитель)</p>
+
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div style="border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 18px;">
+            <div style="font-weight: 800; color: var(--uni-blue); font-size: 1rem; margin-bottom: 8px;">
+              Понедельник
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-main); margin-bottom: 4px;">
+              ⏰ 09:00 - 10:30 • <strong>Международная торговля (Лекция)</strong> — Ауд. 412
+            </p>
+            <p style="font-size: 0.9rem; color: var(--text-main);">
+              ⏰ 10:45 - 12:15 • <strong>Финансовый менеджмент (Семинар)</strong> — Ауд. 308
+            </p>
+          </div>
+
+          <div style="border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 18px;">
+            <div style="font-weight: 800; color: var(--uni-blue); font-size: 1rem; margin-bottom: 8px;">
+              Вторник
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-main); margin-bottom: 4px;">
+              ⏰ 12:30 - 14:00 • <strong>Иностранный язык в сфере экономики (Практика)</strong> — Ауд. 215
+            </p>
+            <p style="font-size: 0.9rem; color: var(--text-main);">
+              ⏰ 14:15 - 15:45 • <strong>Эконометрическое моделирование (Лабораторная)</strong> — Компьютерный класс 5
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <script>
+    // Tab switching in cabinet
+    const navButtons = document.querySelectorAll(".cabinet-nav-btn[data-tab]");
+    const tabContents = document.querySelectorAll(".view-tab-content");
+
+    navButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        navButtons.forEach(b => b.classList.remove("active"));
+        tabContents.forEach(c => c.classList.remove("active"));
+
+        btn.classList.add("active");
+        const targetId = btn.getAttribute("data-tab");
+        const targetTab = document.getElementById(targetId);
+        if (targetTab) targetTab.classList.add("active");
+      });
+    });
+
+    // Quick amount pills
+    const amountPills = document.querySelectorAll(".amount-pill-btn");
+    const customPaymentAmount = document.getElementById("customPaymentAmount");
+
+    amountPills.forEach(pill => {
+      pill.addEventListener("click", () => {
+        amountPills.forEach(p => p.classList.remove("active"));
+        pill.classList.add("active");
+        customPaymentAmount.value = pill.getAttribute("data-val");
+      });
+    });
+
+    // Payment methods
+    const paymentMethods = document.querySelectorAll(".payment-method-card");
+    paymentMethods.forEach(card => {
+      card.addEventListener("click", () => {
+        paymentMethods.forEach(c => c.classList.remove("active"));
+        card.classList.add("active");
+      });
+    });
+
+    // Simulate Top-up Balance
+    const btnExecuteTopUp = document.getElementById("btnExecuteTopUp");
+    const displayBalanceAmount = document.getElementById("displayBalanceAmount");
+    const transactionsHistoryBody = document.getElementById("transactionsHistoryBody");
+
+    // Load persisted balance if exists
+    let savedBalance = localStorage.getItem("muf_tuition_balance");
+    let currentBalance = savedBalance ? parseInt(savedBalance, 10) : 25000;
+    if (displayBalanceAmount) {
+      displayBalanceAmount.textContent = currentBalance.toLocaleString("ru-RU") + " ₽";
+    }
+
+    if (btnExecuteTopUp) {
+      btnExecuteTopUp.addEventListener("click", () => {
+        const addAmount = parseInt(customPaymentAmount.value, 10);
+        if (!addAmount || addAmount <= 0) {
+          alert("Пожалуйста, укажите корректную сумму пополнения.");
+          return;
+        }
+
+        btnExecuteTopUp.disabled = true;
+        btnExecuteTopUp.textContent = "Связь с банком-эквайером...";
+
+        setTimeout(() => {
+          currentBalance += addAmount;
+          localStorage.setItem("muf_tuition_balance", currentBalance);
+          displayBalanceAmount.textContent = currentBalance.toLocaleString("ru-RU") + " ₽";
+
+          // Add to transactions table
+          const randomId = Math.floor(1000 + Math.random() * 9000);
+          const now = new Date();
+          const dateStr = now.toLocaleDateString("ru-RU");
+
+          const newRow = document.createElement("tr");
+          newRow.innerHTML = `
+            <td>${dateStr}</td>
+            <td>#PAY-2026-${randomId}</td>
+            <td>Онлайн-пополнение баланса договора</td>
+            <td><strong>${addAmount.toLocaleString("ru-RU")} ₽</strong></td>
+            <td><span class="status-badge-paid">Зачислено</span></td>
+          `;
+          transactionsHistoryBody.insertBefore(newRow, transactionsHistoryBody.firstChild);
+
+          btnExecuteTopUp.disabled = false;
+          btnExecuteTopUp.textContent = "Оплатить через платежный шлюз банка";
+          alert("Платеж успешно обработан! Баланс счета пополнен на " + addAmount.toLocaleString("ru-RU") + " ₽.");
+        }, 800);
+      });
+    }
+  </script>
+</body>
+</html>

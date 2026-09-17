@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Росийский университет Дружбы Народов | Официальный портал</title>
+  <meta name="description" content="Официальный сайт Международного университета Фурузона (МУФ). Бакалавриат, магистратура, аспирантура, институты, приемная комиссия 2026.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ================= 1. UTILITY AUDIENCE BAR ================= -->
+  <aside class="header-utility-bar">
+    <div class="container">
+      <ul class="audience-links">
+        <li><a href="#catalog" class="active">Абитуриентам</a></li>
+        <li><a href="#faculties">Студентам</a></li>
+        <li><a href="#news">Аспирантам и ученым</a></li>
+        <li><a href="#admission">Иностранным студентам</a></li>
+        <li><a href="#contacts">Сотрудникам</a></li>
+      </ul>
+
+      <div class="utility-right-tools">
+        <a href="tel:+74957890123" class="hotline-phone">
+          <span>📞</span> +7 (495) 789-01-23
+        </a>
+
+        <div class="lang-selector">
+          <button class="lang-btn active">RU</button>
+          <button class="lang-btn">EN</button>
+          <button class="lang-btn">TJ</button>
+          <button class="lang-btn">FR</button>
+        </div>
+
+        <a href="#apply" class="personal-portal-link" id="openCabinetBtn">
+          <span>🏛️</span> Личный кабинет
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= 2. MAIN WHITE NAVIGATION HEADER ================= -->
+  <header class="main-white-header">
+    <div class="container">
+      <a href="#" class="brand-wrapper">
+        <div class="brand-emblem">🎓</div>
+        <div class="brand-names">
+          <h1>Росийский университет Дружбы Народов</h1>
+          <span>RUDN</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links-menu" id="mainNavLinks">
+          <li><a href="#about">Об университете</a></li>
+          <li><a href="#catalog" class="active">Образование</a></li>
+          <li><a href="#faculties">Институты</a></li>
+          <li><a href="#admission">Поступление 2026</a></li>
+          <li><a href="#news">Наука и события</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <button class="btn-header-apply" id="btnHeaderApply">Подать документы</button>
+        <button class="mobile-menu-icon" id="mobileMenuBtn" aria-label="Открыть меню">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= 3. CAMPUS PHOTOGRAPHIC HERO SLIDER ================= -->
+  <section class="hero-slider-section" id="about">
+    <div class="container">
+      <div class="hero-text-block">
+        <span class="hero-eyebrow">Приемная кампания 2026/2027</span>
+        <h2 class="hero-title-main">
+          Международное образование. <span>Открой мир возможностей.</span>
+        </h2>
+        <p class="hero-sub-p">
+          Росийский университет Дружбы Народов — многопрофильный научно-образовательный центр мирового уровня. Более 180 аккредитованных программ, современные лаборатории и партнерство с ведущими университетами 45 стран мира.
+        </p>
+        <div class="hero-cta-buttons">
+          <a href="#catalog" class="btn-hero-solid">
+            <span>🔍</span> Выбрать программу обучения
+          </a>
+          <button class="btn-hero-outline" id="btnHeroApply">
+            <span>📝</span> Электронная подача документов
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 4. FLOATING QUICK-ACCESS TILES ================= -->
+  <div class="quick-tiles-wrapper">
+    <div class="quick-tiles-grid">
+      <a href="#admission" class="quick-tile-card">
+        <div>
+          <div class="tile-icon">📋</div>
+          <h3>Приемная комиссия 2026</h3>
+          <p>Правила приема, минимальные баллы ЕГЭ, даты подачи согласий и приказов.</p>
+        </div>
+        <div class="tile-arrow">Узнать подробнее →</div>
+      </a>
+
+      <a href="#catalog" class="quick-tile-card">
+        <div>
+          <div class="tile-icon">🎓</div>
+          <h3>Бакалавриат и специалитет</h3>
+          <p>Более 85 направлений высшего образования с бюджетными местами.</p>
+        </div>
+        <div class="tile-arrow">Каталог специальностей →</div>
+      </a>
+
+      <a href="#catalog" class="quick-tile-card">
+        <div>
+          <div class="tile-icon">🔬</div>
+          <h3>Магистратура и аспирантура</h3>
+          <p>Углубленные исследовательские программы, гранты и научные лаборатории.</p>
+        </div>
+        <div class="tile-arrow">Программы магистратуры →</div>
+      </a>
+
+      <a href="#admission" class="quick-tile-card">
+        <div>
+          <div class="tile-icon">🌐</div>
+          <h3>Иностранным абитуриентам</h3>
+          <p>Программы подготовки на русском и английском языках, визовая поддержка и кампус.</p>
+        </div>
+        <div class="tile-arrow">Международный отдел →</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ================= 5. INSTITUTIONAL STATS BAND ================= -->
+  <section class="stats-band">
+    <div class="container">
+      <div class="stat-item">
+        <h4>28 500+</h4>
+        <p>Студентов очной и очно-заочной форм</p>
+      </div>
+      <div class="stat-item">
+        <h4>115+</h4>
+        <p>Стран мира представлены в кампусе</p>
+      </div>
+      <div class="stat-item">
+        <h4>180+</h4>
+        <p>Аккредитованных программ образования</p>
+      </div>
+      <div class="stat-item">
+        <h4>95%</h4>
+        <p>Трудоустройство выпускников по специальности</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 6. EDUCATIONAL PROGRAMS CATALOG ================= -->
+  <section class="section-container" id="catalog">
+    <div class="section-title-wrap">
+      <span class="section-kicker">Образование и профессии</span>
+      <h2 class="section-heading">Каталог образовательных программ</h2>
+    </div>
+
+    <div class="catalog-panel">
+      <!-- Degree level tabs -->
+      <div class="levels-tab-row" id="levelTabs">
+        <button class="level-pill-btn active" data-level="all">Все уровни (8)</button>
+        <button class="level-pill-btn" data-level="bachelor">Бакалавриат</button>
+        <button class="level-pill-btn" data-level="specialist">Специалитет</button>
+        <button class="level-pill-btn" data-level="master">Магистратура</button>
+        <button class="level-pill-btn" data-level="phd">Аспирантура</button>
+      </div>
+
+      <!-- Filters & live search -->
+      <div class="controls-filter-grid">
+        <div class="search-field-box">
+          <span class="search-icon-pos">🔍</span>
+          <input 
+            type="text" 
+            id="programSearchInput" 
+            placeholder="Поиск по названию или коду (напр. '09.03.04', 'Экономика', 'Медицина')..."
+          >
+        </div>
+
+        <div>
+          <select id="facultyFilterSelect" class="dropdown-filter-select">
+            <option value="all">Все институты и факультеты</option>
+            <option value="econ">Институт мировой экономики и бизнеса</option>
+            <option value="it">Факультет цифровых технологий и ИИ</option>
+            <option value="med">Медицинский институт</option>
+            <option value="law">Юридический институт</option>
+            <option value="eng">Инженерная академия</option>
+          </select>
+        </div>
+
+        <div>
+          <select id="budgetFilterSelect" class="dropdown-filter-select">
+            <option value="all">Все формы финансирования</option>
+            <option value="budget">Есть бюджетные места</option>
+            <option value="contract">Контрактная основа</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Counter -->
+      <div class="programs-counter-bar">
+        <span>Найдено программ: <strong id="resultsCount">8</strong></span>
+        <span>Формат обучения: <strong>Очная / Очно-заочная</strong></span>
+      </div>
+
+      <!-- Grid of Cards -->
+      <div class="programs-cards-flow" id="programsGrid">
+        <!-- Injected dynamically via app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 7. INSTITUTES & FACULTIES ================= -->
+  <section class="section-container" id="faculties">
+    <div class="section-title-wrap">
+      <span class="section-kicker">Структура университета</span>
+      <h2 class="section-heading">Институты и факультеты МУФ</h2>
+    </div>
+
+    <div class="institutes-academic-grid">
+      <div class="institute-card-unit">
+        <div class="unit-top-info">
+          <div class="unit-emblem-badge">📊</div>
+          <h3>Институт мировой экономики и бизнеса</h3>
+          <p>Подготовка лидеров глобальных рынков: международные финансы, цифровая экономика, мировая торговля и FinTech.</p>
+        </div>
+        <a href="#catalog" class="unit-programs-link">Смотреть программы института →</a>
+      </div>
+
+      <div class="institute-card-unit">
+        <div class="unit-top-info">
+          <div class="unit-emblem-badge">💻</div>
+          <h3>Факультет цифровых технологий и ИИ</h3>
+          <p>Инженерия программного обеспечения, машинное обучение, кибербезопасность, большие данные и облачные вычисления.</p>
+        </div>
+        <a href="#catalog" class="unit-programs-link">Смотреть программы института →</a>
+      </div>
+
+      <div class="institute-card-unit">
+        <div class="unit-top-info">
+          <div class="unit-emblem-badge">🩺</div>
+          <h3>Медицинский институт</h3>
+          <p>Лечебное дело, фармация, биомедицинские исследования и стоматология на базе современных симуляционных центров.</p>
+        </div>
+        <a href="#catalog" class="unit-programs-link">Смотреть программы института →</a>
+      </div>
+
+      <div class="institute-card-unit">
+        <div class="unit-top-info">
+          <div class="unit-emblem-badge">⚖️</div>
+          <h3>Юридический институт</h3>
+          <p>Международное публичное и частное право, правовое сопровождение внешнеэкономической деятельности и IT-бизнеса.</p>
+        </div>
+        <a href="#catalog" class="unit-programs-link">Смотреть программы института →</a>
+      </div>
+
+      <div class="institute-card-unit">
+        <div class="unit-top-info">
+          <div class="unit-emblem-badge">⚙️</div>
+          <h3>Инженерная академия</h3>
+          <p>Робототехника, мехатроника, аэрокосмическое приборостроение, наноматериалы и экологическая инженерия.</p>
+        </div>
+        <a href="#catalog" class="unit-programs-link">Смотреть программы института →</a>
+      </div>
+
+      <div class="institute-card-unit">
+        <div class="unit-top-info">
+          <div class="unit-emblem-badge">🌐</div>
+          <h3>Институт дипломатии и иностранных языков</h3>
+          <p>Синхронный перевод, востоковедение, международные коммуникации и дипломатическая протокольная служба.</p>
+        </div>
+        <a href="#catalog" class="unit-programs-link">Смотреть программы института →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 8. NEWS & EVENTS ================= -->
+  <section class="section-container" id="news">
+    <div class="section-title-wrap">
+      <span class="section-kicker">События и пресс-центр</span>
+      <h2 class="section-heading">Новости университета и наука</h2>
+    </div>
+
+    <div class="news-events-grid">
+      <article class="news-portal-card">
+        <div class="news-photo-thumb img-1"></div>
+        <div class="news-card-inner">
+          <div>
+            <div class="news-stamp-date">28 сентября 2026 • Приемная кампания</div>
+            <h3>Общеуниверситетский День открытых дверей МУФ: гибридный формат</h3>
+            <p>Встречи с деканами факультетов, презентация грантовых программ обучения и мастер-классы в университетских лабораториях.</p>
+          </div>
+          <a href="#admission" class="read-more-link">Подробнее →</a>
+        </div>
+      </article>
+
+      <article class="news-portal-card">
+        <div class="news-photo-thumb img-2"></div>
+        <div class="news-card-inner">
+          <div>
+            <div class="news-stamp-date">16 октября 2026 • Научный форум</div>
+            <h3>Международная конференция по искусственному интеллекту в медицине</h3>
+            <p>Исследователи и клиницисты из 18 стран представят алгоритмы ранней диагностики на основе нейросетей.</p>
+          </div>
+          <a href="#news" class="read-more-link">Подробнее →</a>
+        </div>
+      </article>
+
+      <article class="news-portal-card">
+        <div class="news-photo-thumb img-3"></div>
+        <div class="news-card-inner">
+          <div>
+            <div class="news-stamp-date">05 ноября 2026 • Карьера и бизнес</div>
+            <h3>Осенняя ярмарка вакансий от международных компаний-партнеров</h3>
+            <p>Более 60 технологических, финансовых и медицинских корпораций проведут отбор студентов старших курсов на стажировки.</p>
+          </div>
+          <a href="#contacts" class="read-more-link">Подробнее →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= 9. ADMISSION APPLICATION MODAL ================= -->
+  <div class="modal-overlay-wrap" id="appModal">
+    <div class="modal-box-frame">
+      <button class="modal-close-trigger" id="modalCloseBtn" aria-label="Закрыть">&times;</button>
+      
+      <div id="modalFormContainer">
+        <div class="modal-header-text">
+          <h2>Онлайн-приемная комиссия МУФ</h2>
+          <p>Подача заявления на поступление в Росийский университет Дружбы Народов (2026/2027 уч. год).</p>
+        </div>
+
+        <form id="admissionForm">
+          <div class="form-group-item">
+            <label for="applicantName">ФИО поступающего *</label>
+            <input type="text" id="applicantName" class="form-input-control" placeholder="Иванов Иван Иванович" required>
+          </div>
+
+          <div class="form-two-cols">
+            <div class="form-group-item">
+              <label for="applicantEmail">Email *</label>
+              <input type="email" id="applicantEmail" class="form-input-control" placeholder="student@example.com" required>
+            </div>
+            <div class="form-group-item">
+              <label for="applicantPhone">Телефон *</label>
+              <input type="tel" id="applicantPhone" class="form-input-control" placeholder="+7 (999) 000-00-00" required>
+            </div>
+          </div>
+
+          <div class="form-group-item">
+            <label for="applicantProgram">Выбранная специальность *</label>
+            <select id="applicantProgram" class="form-input-control" required>
+              <option value="">-- Выберите программу из перечня --</option>
+              <option value="09.03.04 Программная инженерия и разработка ИИ">09.03.04 Программная инженерия и разработка ИИ (Бакалавриат)</option>
+              <option value="38.03.01 Международная экономика и мировая торговля">38.03.01 Международная экономика и мировая торговля (Бакалавриат)</option>
+              <option value="31.05.01 Лечебное дело">31.05.01 Лечебное дело (Специалитет)</option>
+              <option value="40.03.01 Международное право">40.03.01 Международное право (Бакалавриат)</option>
+              <option value="09.04.01 Прикладной искусственный интеллект">09.04.01 Прикладной искусственный интеллект (Магистратура)</option>
+              <option value="38.04.02 Управление цифровым бизнесом">38.04.02 Управление цифровым бизнесом (Магистратура)</option>
+              <option value="01.06.01 Математическое моделирование">01.06.01 Математическое моделирование (Аспирантура)</option>
+              <option value="12.03.04 Биомедицинская инженерия">12.03.04 Биомедицинская инженерия (Бакалавриат)</option>
+            </select>
+          </div>
+
+          <div class="form-two-cols">
+            <div class="form-group-item">
+              <label for="studyForm">Форма обучения</label>
+              <select id="studyForm" class="form-input-control">
+                <option value="full-time">Очная</option>
+                <option value="part-time">Очно-заочная</option>
+                <option value="distance">Дистанционная</option>
+              </select>
+            </div>
+            <div class="form-group-item">
+              <label for="citizenship">Гражданство</label>
+              <select id="citizenship" class="form-input-control">
+                <option value="rf">Гражданин РФ</option>
+                <option value="cis">Граждане стран СНГ</option>
+                <option value="international">Иностранный гражданин</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="checkbox-consent">
+            <input type="checkbox" id="consentAgree" required>
+            <label for="consentAgree">Я даю согласие на обработку персональных данных в соответствии с правилами приема МУФ.</label>
+          </div>
+
+          <button type="submit" class="btn-send-application">Зарегистрировать заявление в приемной комиссии</button>
+        </form>
+      </div>
+
+      <!-- Success View -->
+      <div class="success-container" id="modalSuccessBox">
+        <div class="success-icon-check">✅</div>
+        <h2>Заявление успешно принято!</h2>
+        <p style="margin: 12px 0 20px; color: #556270;">
+          Электронный регистрационный номер: <strong id="applicationRefId" style="color: #004b87;">#MUF-2026-9284</strong>.<br>
+          Данные личного кабинета абитуриента отправлены на ваш Email.
+        </p>
+        <button class="btn-hero-solid" id="btnModalCloseSuccess" style="margin: 0 auto; display: block;">Понятно, закрыть</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 9.1 LOGIN MODAL (ЛИЧНЫЙ КАБИНЕТ) ================= -->
+  <div class="modal-overlay-wrap" id="loginModal">
+    <div class="modal-box-frame login-modal-frame">
+      <button class="modal-close-trigger" id="loginModalCloseBtn" aria-label="Закрыть">&times;</button>
+      
+      <div id="loginFormContent">
+        <div class="modal-header-text" style="text-align: center;">
+          <div class="login-header-icon">🔐</div>
+          <h2>Вход в Личный кабинет</h2>
+          <p>Единая информационная система студентов и сотрудников МУФ</p>
+        </div>
+
+        <div class="login-role-switch">
+          <button type="button" class="role-switch-btn active" data-role="student">Студент</button>
+          <button type="button" class="role-switch-btn" data-role="staff">Преподаватель / Сотрудник</button>
+        </div>
+
+        <form id="studentLoginForm">
+          <div class="form-group-item">
+            <label for="loginIdentifier">Логин, Email или № студенческого билета *</label>
+            <div class="input-with-icon">
+              <span class="field-icon">👤</span>
+              <input type="text" id="loginIdentifier" class="form-input-control" placeholder="student или email..." required>
+            </div>
+          </div>
+
+          <div class="form-group-item">
+            <label for="loginPassword">Пароль *</label>
+            <div class="input-with-icon">
+              <span class="field-icon">🔒</span>
+              <input type="password" id="loginPassword" class="form-input-control" placeholder="Введите пароль" required>
+              <button type="button" class="toggle-password-btn" id="togglePasswordBtn" title="Показать/скрыть пароль">👁️</button>
+            </div>
+          </div>
+
+          <div class="login-aux-row">
+            <label class="checkbox-remember">
+              <input type="checkbox" id="rememberMe" checked>
+              <span>Запомнить меня</span>
+            </label>
+            <a href="#" class="forgot-pass-link" id="forgotPasswordLink">Забыли пароль?</a>
+          </div>
+
+          <button type="submit" class="btn-send-application" id="btnSubmitLogin">
+            Войти в Личный кабинет
+          </button>
+
+          <div id="loginErrorMsg" style="display: none; color: #dc2626; font-size: 0.85rem; font-weight: 700; margin-top: 10px; text-align: center;">
+            Неверный логин или пароль. Пожалуйста, проверьте данные.
+          </div>
+        </form>
+      </div>
+
+      <!-- Logged In Success / Dashboard Preview -->
+      <div class="login-success-view" id="loginSuccessView" style="display: none; text-align: center; padding: 10px 0;">
+        <div class="user-avatar-badge">👨‍🎓</div>
+        <h3 id="welcomeUserName" style="font-size: 1.3rem; font-weight: 900; color: #002d54; margin-bottom: 4px;">
+          Добро пожаловать, Арджманд!
+        </h3>
+        <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 20px;">
+          Авторизация успешно подтверждена. Сессия активна.
+        </p>
+        
+        <div class="cabinet-mini-summary">
+          <div class="mini-summary-item">
+            <span class="lbl">Студенческий билет:</span>
+            <span class="val" style="color: #004b87;">№ 1032183391</span>
+          </div>
+          <div class="mini-summary-item">
+            <span class="lbl">Статус студента:</span>
+            <span class="val badge-active">Обучается (Очная форма)</span>
+          </div>
+          <div class="mini-summary-item">
+            <span class="lbl">Подразделение:</span>
+            <span class="val">Институт мировой экономики</span>
+          </div>
+          <div class="mini-summary-item">
+            <span class="lbl">Специальность:</span>
+            <span class="val">38.03.01 Экономика</span>
+          </div>
+          <div class="mini-summary-item">
+            <span class="lbl">Курс и группа:</span>
+            <span class="val">3 курс, группа ЭК-301</span>
+          </div>
+          <div class="mini-summary-item">
+            <span class="lbl">Баланс по договору:</span>
+            <span class="val" style="color: #065f46;">0 ₽ (Оплачено полностью)</span>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; margin-top: 24px;">
+          <button type="button" class="btn-hero-solid" id="btnCloseLoginSuccess" style="flex: 1; padding: 12px;" onclick="window.location.href='cabinet.html'">
+            В панель обучения →
+          </button>
+          <button type="button" class="btn-card-enroll" id="btnLogoutSession" style="background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1;">
+            Выйти
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 10. INSTITUTIONAL FOOTER ================= -->
+  <footer class="flagship-footer" id="contacts">
+    <div class="container">
+      <div class="footer-columns-grid">
+        <div>
+          <h4>Росийский университет Дружбы Народов (МУФ)</h4>
+          <p style="font-size: 0.88rem; line-height: 1.6; margin-bottom: 16px;">
+            Образовательная организация высшего образования «Росийский университет Дружбы Народов». Государственная бессрочная лицензия № 3108 и свидетельство о государственной аккредитации.
+          </p>
+          <p style="font-size: 0.8rem; color: #8091a5;">
+            © 2026 Росийский университет Дружбы Народов. Все права защищены.
+          </p>
+        </div>
+
+        <div>
+          <h4>Образование</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#about">Об университете</a></li>
+            <li><a href="#catalog">Каталог программ</a></li>
+            <li><a href="#faculties">Институты и факультеты</a></li>
+            <li><a href="#admission">Поступление 2026</a></li>
+            <li><a href="#news">Научные центры</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Сервисы</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#apply" class="open-modal-trigger">Личный кабинет абитуриента</a></li>
+            <li><a href="#catalog">Расписание занятий</a></li>
+            <li><a href="#catalog">Электронная библиотека</a></li>
+            <li><a href="#admission">Кампус и общежития</a></li>
+            <li><a href="#contacts">Вакансии университета</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Контакты</h4>
+          <ul class="footer-contacts-info">
+            <li><span>📍</span> Главный кампус: просп. Университетский, 12</li>
+            <li><span>📞</span> Телефон: +7 (495) 789-01-23</li>
+            <li><span>✉️</span> Email: admission@furuzon-uni.org</li>
+            <li><span>🕒</span> Пн-Пт: 09:00 - 18:00</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-legal">
+        <div>Сведения об образовательной организации • Политика обработки данных • Карта сайта</div>
+        <div>Furuzon International University Portal</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
